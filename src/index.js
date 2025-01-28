@@ -1,17 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+//import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const elem = (
+  <div>
+    
+    
+  </div>
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+const Header = () => {
+  return <h2>Hello Word</h2>
+}
+
+const Field = () => {
+  const styleField = {
+    width: '300px'
+  }
+
+  return <input 
+            style={styleField}
+            tupe="text" 
+            placeholder="Type here" 
+            autoComplete=''
+            className='first'/>
+}
+
+const Btn = () => {
+  const text = "Log in";
+  const logged = true;
+  return <button>{logged ? "Enter" : text}</button>
+}
+
+const App = () => {
+  return (
+    <div>
+      <Header/>
+      <Field/>
+      <Btn/>
+    </div>
+  )
+}
+
+
+ const root = ReactDOM.createRoot(document.getElementById('root'));
+ root.render(
+   <React.StrictMode>
+     {<App/>} {/* Тут мы рендерим содержимое переменной elem */}
+   </React.StrictMode>
+ );
+
 reportWebVitals();
